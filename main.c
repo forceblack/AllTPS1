@@ -20,7 +20,8 @@ int main()
     //chapitre 6 ...............Les Fonctions pas fait
 
     //chapitre 7..............Les Tableaux
-    Chap7_Tableau();
+    //Chap7_Tableau();
+    Chap7_Pyramide();
 
 
     return 0;

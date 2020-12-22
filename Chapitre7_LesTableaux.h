@@ -19,6 +19,7 @@ typedef struct tab_Point
 //prototype..................................................................................................
 
 void Chap7_Tableau(void);
+void Chap7_Pyramide(void);
 
 void f_tabEntry (int *inTab, int inSize);
 void f_tabDisplay (int *inTab, int inSize);
@@ -27,6 +28,7 @@ int f_aboveAverageNumber (int *inTab, int inSize, float inMoy);
 int f_belowAverageNumber (int *inTab, int inSize, float inMoy);
 void f_findMaxTabValue (int *inTab, int inSize,int *outMaxValue, int *outMaxIndex);
 void f_findMinTabValue (int *inTab, int inSize,int *outMinValue, int *outMaxIndex);
+int f_summTab(int *inTab, int inSize);
 
 void f_switchTab(int *inTab, int inSize);
 void f_copyTab(int *inTab,int *copyTab, int inSize);

@@ -1,7 +1,5 @@
-#include   "Chapitre7_LesTableaux.h"
-
-
-
+#include "Chapitre7_LesTableaux.h"
+#include "Chapitre7_PyramideData.h"
 
 
 
@@ -47,6 +45,50 @@ void Chap7_Tableau()
         f_tabDisplay(tab,NB_ELEMENT);
     return;
 }
+
+
+void Chap7_Pyramide()
+{
+        int tailleTabAnne = sizeof(annee)/sizeof(int);
+        int tailleTabfemme = sizeof(femme)/sizeof(int);
+        int tailleTabhomme = sizeof(homme)/sizeof(int);
+
+        //age le plus representé chez les femmes....................................
+        tabPoint  agePlusRepresenteFemme;
+        f_findMaxTabValue (femme,tailleTabfemme,
+                           &agePlusRepresenteFemme.pointValue,&agePlusRepresenteFemme.pointIndex);
+        printf("l'age le plus represente chez les femme est le %d\n",annee[agePlusRepresenteFemme.pointIndex]);
+
+        //calcul age moyen par sexe..............................................
+        int ageMoyenFemme;
+        int nombretotalFemme=f_summTab(femme,tailleTabfemme);
+        for (int i=0 ; i<tailleTabfemme ; ++i)
+        {
+            ageMoyenFemme = ageMoyenFemme + (femme[i]* (2020-annee[i]));
+        }
+        ageMoyenFemme = ageMoyenFemme/nombretotalFemme;
+        printf("age moyen femme = %d\n",ageMoyenFemme);
+
+
+        //nombre d'individu par tranche de 5
+        int borneMoins=0;
+        int bornePlus=5;
+        do   {
+                int nbLocal=0;
+                for (int i=0; i<5; ++i)
+                    {
+                     nbLocal=nbLocal+femme[borneMoins+i];
+                    }
+                printf ("il y a %d personne dans le groupe %d-%d soit %.2f%%\n",nbLocal,borneMoins,bornePlus,(100.0 * nbLocal) / nombretotalFemme);
+                borneMoins = borneMoins + 5;
+                bornePlus = bornePlus +5;
+              } while (bornePlus < tailleTabfemme);
+
+    return;
+}
+
+
+
 
 
 
@@ -160,6 +202,19 @@ void f_findMinTabValue (int *inTab,int inSize,int *outMinValue, int *outMinIndex
         }
     }
 }
+
+
+int f_summTab(int *inTab, int inSize)
+{
+        int summTab = 0;
+        for (int i=0 ; i<inSize ; ++i)
+        {
+            summTab = summTab + inTab[i];
+        }
+        return summTab;
+}
+
+
 
 void f_copyTab(int *inTab,int *copyTab, int inSize)
 {

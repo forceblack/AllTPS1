@@ -20,6 +20,7 @@ HEADERS += \
     Chapitre4_Graphique.h \
     Chapitre5_StructuresDeControle.h \
     Chapitre7_LesTableaux.h \
+    Chapitre7_PyramideData.h \
     ext/ez-draw.h
 
 DISTFILES +=
