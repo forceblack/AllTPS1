@@ -17,7 +17,7 @@ int main()
 
     //chapitre 5................Structure de Controle
     //Chap5_StructuresDeControle();
-    //Chap5_Graph();
+    Chap5_Graph();
 
     //chapitre 6 ...............Les Fonctions pas fait
 

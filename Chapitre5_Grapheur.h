@@ -21,6 +21,13 @@ typedef struct
     float PAS;
 }graphReference;
 
+typedef struct
+{
+    int x;
+    int y;
+}point2D;
+
+
 //cette structure définie une equation du second degres
 typedef struct
 {
@@ -41,12 +48,13 @@ void Chap5_Graph(void);                         //fonction main du grapheur
 void Grapheur_event (Ez_event *ev);             //fonction appelé a la creation de fenetre (dispatch les events en sourie-clavier-display etc...
 void Grapheur_on_key_press (Ez_event *ev);      //fonction qui traite les events clavier
 void Grapheur_on_expose (Ez_event *ev);         //fonction qui traite l'affichae de la fenetre
-/*
-void draw_axes (window w,graphReference inGraph);
+
+void draw_axes (Ez_event *ev,graphReference *inGraph);
+void draw_Cross (Ez_window win,point2D inRef, int inSize);
 equation2Deg inputEquation2deg (void);
-void draw_curve(window w,graphReference inGraph,equation2Deg inEquation);
+void draw_curve(Ez_event *ev,graphReference inGraph,equation2Deg inEquation);
 void print_2Dpoint(point2D inPoint);
-$/
+
 
 
 #endif
