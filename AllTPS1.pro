@@ -9,6 +9,7 @@ SOURCES += \
         Chapitre5_Grapheur.c \
         Chapitre5_StructuresDeControle.c \
         Chapitre7_LesTableaux.c \
+        Chapitre9_Strings.c \
         ext/ez-draw.c \
         main.c
 
@@ -23,6 +24,7 @@ HEADERS += \
     Chapitre5_StructuresDeControle.h \
     Chapitre7_LesTableaux.h \
     Chapitre7_PyramideData.h \
+    Chapitre9_Strings.h \
     ext/ez-draw.h
 
 DISTFILES +=
